@@ -1,0 +1,68 @@
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+  <div class="container d-flex justify-content-center">
+    <div class="w-50 align-center">
+      <div class="login-body align-center">
+        <div class="text-center">
+          <div class="brand-wrapper mt-5">
+            <h3>REGISTER</h3>
+          </div>
+        </div>
+        <br>
+        <form class="login-form mt-2" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+
+          <div class="col-lg-12 text-center mt-3">
+            <div class="form-group position-relative">
+              <label>Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control psl-5" formControlName="user_name" placeholder="Name">
+            </div>
+          </div>
+
+
+          <div class="col-lg-12 text-center mt-3">
+            <div class="form-group position-relative">
+              <label>Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control psl-5" formControlName="user_email" placeholder="Email" required>
+            </div>
+          </div>
+
+          <div class="col-lg-12 text-center  mt-3">
+            <div class="form-group position-relative">
+              <label>Contact No. <span class="text-danger">*</span></label>
+              <input type="text" class="form-control psl-5" formControlName="user_contact_no" placeholder="Last Name"
+                required>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center  mt-3">
+            <div class="form-group position-relative">
+              <label>Password <span class="text-danger">*</span></label>
+              <input type="password" class="form-control psl-5" formControlName="user_password" placeholder="Password"
+                required>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-3">
+            <div class="form-group ">
+              <label class="d-block">Gender</label>
+              <div class="d-flex justify-content-center">
+                <input class="form-check-input" type="radio" id="male" formControlName="user_gender" value="male">
+                <label class="radio inline" for="male" style="margin-left: 1%; margin-right: 10%;">Male</label>
+                <input class="form-check-input" type="radio" id="female" formControlName="user_gender" value="female">
+                <label class="radio inline" for="female">Female</label>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="error" class="alert alert-danger mb-3 msl-3">{{error}}</div>
+          <div class="col-md-12 d-flex justify-content-center mt-3">
+            <button class="btn btn-primary auth-form-btn" [disabled]="registerForm.invalid">Register</button>
+          </div>
+          <div class="col-lg-12 mt-4 text-center">
+            <div class="mx-auto">
+              <p class="mb-0 mt-3"><small class="text-dark msr-2">Already have an account ?</small> <a
+                  routerLink="/sign-in" class="text-dark fw-bold">Sign in</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
