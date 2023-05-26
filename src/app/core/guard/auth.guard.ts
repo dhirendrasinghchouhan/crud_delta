@@ -27,22 +27,11 @@ let loginBool;
         return true
       }
 
-// console.log('Haan '+ loginBool);
+this.router.navigate["/sign-in"]
 
-      this.router.navigate["/sign-in"]
       return false;
-
   }
 
 
 }
-// console.log('Haan bhai auth guard me hi hu');
 
-//   if (!this.authService.isLogin) {
-//     console.log('in if');
-//     return true
-//   }
-//   return false
-//   console.log('Haan bhai bahar hu');
-// }
-// )
