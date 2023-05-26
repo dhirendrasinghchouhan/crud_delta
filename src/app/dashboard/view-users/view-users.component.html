@@ -1,0 +1,55 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<main>
+  <h4 class="text-center"> USERS</h4>
+{{users.lne}}
+  <table class="table table-striped" *ngIf="users?.length">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Contact No.</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Registration Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let user of users">
+        <td>{{user.user_id}}</td>
+        <td>{{user.user_name}}</td>
+        <td>{{user.user_email}}</td>
+        <td>{{user.user_phone_no}}</td>
+        <td>{{user.user_gender}}</td>
+        <td>{{user.user_reg_date }}</td>
+        <td>{{user.user_satus}}</td>
+        <td>
+          <ul class="list-inline m-0">
+
+            <li class="list-inline-item">
+                <button class="btn btn-success btn-sm rounded-0" type="button" (click)="editUser(user)" data-toggle="tooltip" data-placement="top" title="Edit" ><i class="fa fa-edit"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" (click)="deleteuser(user)" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+            </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+
+
+
+
+
+
+
+
