@@ -6,7 +6,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'view',
+    redirectTo:'view-users',
     pathMatch: 'full'
   },
   {
