@@ -9,12 +9,14 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { ViewUsersComponent } from './dashboard/view-users/view-users.component';
 import { EditUserComponent } from './dashboard/edit-user/edit-user.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
     ],
   imports: [
     BrowserModule,
