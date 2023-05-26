@@ -8,7 +8,8 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  isLogin = false;
+  // isLogin = false;
+  isLogin= new BehaviorSubject <boolean>(false);
 
 
   private currentUserSubject: BehaviorSubject<User>;
@@ -34,11 +35,12 @@ export class AuthService {
       .get<any>(`${ServiceConstant.URL}login?`+loginPara)
       .pipe(
         map((user) => {
-          if (user.status === true) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
+          if (user.status === 1) {
+            this.isLogin.next(true);
+            localStorage.setItem('STATE', 'true');
             this.currentUserSubject.next(user);
           }else{
-            this.isLogin = false;
+            this.isLogin.next(false);
             localStorage.setItem('STATE', 'false');
           }
           return user;
