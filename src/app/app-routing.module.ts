@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { SigninComponent } from './authentication/signin/signin.component';
-import { ViewUsersComponent } from './dashboard/view-users/view-users.component';
-import { EditUserComponent } from './dashboard/edit-user/edit-user.component';
 import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: ViewUsersComponent},
 
+  {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   {
     path: 'sign-up',component: SignupComponent
 
@@ -23,6 +21,7 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
       canActivate: [AuthGuard]
   },
+
 
 ];
 
