@@ -26,7 +26,6 @@ export class EditUserComponent {
       this.API_URL = this.API_URL + params['user_id'];
 
     });
-    console.log(this.user_id);
 
     this.updateForm = this.formBuilder.group({
       user_name: ['', [Validators.required]],

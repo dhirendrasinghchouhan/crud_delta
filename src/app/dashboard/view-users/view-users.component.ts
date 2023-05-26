@@ -33,7 +33,6 @@ export class ViewUsersComponent implements OnInit {
   public userData() {
     this.httpService.get(this.API_URL).subscribe((result) => {
       this.users = result['data'];
-      console.log(this.users);
 
     })
 
@@ -57,7 +56,6 @@ export class ViewUsersComponent implements OnInit {
 
 
   editUser(row) {
-    console.log('edit')
 
     this.router.navigate(['/dashboard/edit-user/' + row.user_id]);
   }

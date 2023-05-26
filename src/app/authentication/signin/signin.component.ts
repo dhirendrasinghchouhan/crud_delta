@@ -35,7 +35,6 @@ export class SigninComponent {
   }
 
   onSubmit() {
-    console.log(this.f['user_email'].value);
     this.submitted = true;
     this.error = '';
     if (this.loginForm.invalid) {
@@ -46,7 +45,6 @@ export class SigninComponent {
       this.authService.login(loginParama)
         .subscribe(
           (res) => {
-            console.log(res);;
 
             if (res.status==true) {
               this.router.navigate(['/dashboard/view-users']);
