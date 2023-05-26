@@ -7,7 +7,7 @@ import { EditUserComponent } from './dashboard/edit-user/edit-user.component';
 import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'sign-in',       pathMatch: 'full' },
+  { path: '', component: ViewUsersComponent},
 
   {
     path: 'sign-up',component: SignupComponent
@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-      canActivate:[AuthGuard]
+      canActivate: [AuthGuard]
   },
 
 ];
